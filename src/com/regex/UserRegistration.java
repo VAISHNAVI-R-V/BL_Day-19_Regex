@@ -1,8 +1,9 @@
 package com.regex;
 
 /**
- * @purpose: Check valid email
+ * @purpose: Check valid email & phone number.
  * e.g: abc.xyz@bl.co.in
+ * e.g. 91 9919819801
  */
 
 public class UserRegistration {
@@ -14,6 +15,7 @@ public class UserRegistration {
         System.out.println(lastName("Mehta"));
 
         email();
+        phoneNumber();
     }
 
     // validate first name
@@ -35,6 +37,18 @@ public class UserRegistration {
             System.out.println("Given email-id is valid");
         } else {
             System.out.println("Given email-id is not valid");
+        }
+    }
+
+    //validate given phone number
+    public static void phoneNumber() {
+        String phone = "91 9919819801";
+        String regex = "[0-9]{2}[\s][0-9]{10}";
+        boolean result = phone.matches(regex);
+        if (result) {
+            System.out.println("Given phone number is valid");
+        } else {
+            System.out.println("Given phone number is not valid");
         }
     }
 }
