@@ -2,8 +2,9 @@ package com.regex;
 
 /**
  * @purpose: Check valid password
- * Rule 1: minimum 8 characters,
+ * Rule 1: minimum 8 characters.
  * Rule 2: should contain at least 1 upper case character.
+ * Rule 3: should have at least 1 numeric number.
  */
 
 public class UserRegistration {
@@ -55,8 +56,9 @@ public class UserRegistration {
 
     //validate given password
     public static void password() {
-        String password = "abcd#123";
-        String regex = "(?=.*[A-Z])[A-Za-z0-9@_#$%!]{8,}";
+        String password = "acd$1X23";
+        String regex = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}";
+       // String regex = "(?=.*[A-Z])[A-Za-z0-9@_#$%!]{8,}";
         boolean result = password.matches(regex);
         if (result) {
             System.out.println("Given password is valid");
